@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+@font-face {
+  font-family: Gotham Rounded;
+  src: url(../public/fonts/gothamRounded.ttf);
+}
+
+#heroImage {
+  width: 100%;
+  height: 375px;
+}
+
+#mainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 0px 20px;
+  /* gap: 47px; */
+  background: #ffffff;
+  box-shadow: 0px 4px 0px #d3d7e1;
+  border-radius: 0px 0px 20px 20px;
+}
+
+#title {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+  padding: 25px 20px 10px;
+  text-align: center;
+  color: #1e1e1e;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+#type {
+  font-family: "Gotham Rounded";
+  font-style: normal;
+  font-weight: 325;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #233869;
+  opacity: 0.5;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+#detailsInfo {
+  padding: 40px 25px;
+}
+
+#basicInfo,
+#missionsIcon {
+  width: 115px;
+  height: 35px;
+}
+
+#backgroundBoxDiv {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 55px;
+}
+
+#backgroundBox {
+  max-height: 1200px;
+  background: url("../public/backgroundBox.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 14vh;
+  margin-bottom: 12.5px;
+  min-height: 110px;
+  /* min-height: 17vh; */
+  min-width: 100%;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#basicInfoKey {
+  font-family: "Indie Flower";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: #233869;
+  opacity: 0.5;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+#basicInfoValue {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1e1e1e;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+#missionsContainer {
+  margin-top: 15px;
+  margin-bottom: 150px;
+}
+
+#missionDiv {
+  margin-bottom: 15px;
+}
+
+#missionName {
+  width: 325px;
+  height: 24px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1e1e1e;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+#missionFlight {
+  width: 325px;
+  height: 19px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: #1e1e1e;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+#backtoListDiv {
+  width: 100%;
+  display: flex;
+}
+
+#backToListBtn {
+  font-family: "Indie Flower", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: #233869;
+  padding-left: 7.5px;
+}
+
+#backToListBtn:hover {
+  color: purple;
+  border-bottom: purple solid 1px;
+}
+
+#backButtonDiv {
+  position: absolute;
+  margin: 15px 0px 0px 15px;
+}
+
+#backIcon {
+  width: 30px;
+  height: 32px;
+}
+
+#loaderDiv {
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  #content {
+    width: 60%;
+    margin: auto;
+  }
+}
