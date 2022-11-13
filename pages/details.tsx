@@ -107,13 +107,6 @@ export default function DetailsPage({ ship }: any) {
         {/* Show default image when loading is finished - if picture doesn't exist */}
         {!ship?.image && (
           <div>
-            <Image
-              src="https://source.unsplash.com/photos/ctXf1GVyf9A"
-              id={styles.heroImage}
-              height="380"
-              width="300"
-              alt="Ship image"
-            />
             <Link href={{ pathname: "/" }} className={styles.card}>
               <div id={styles.backButtonDiv}>
                 <Image
@@ -125,6 +118,13 @@ export default function DetailsPage({ ship }: any) {
                 />
               </div>
             </Link>
+            <Image
+              src="https://source.unsplash.com/photos/ctXf1GVyf9A"
+              id={styles.heroImage}
+              height="380"
+              width="300"
+              alt="Ship image"
+            />
           </div>
         )}
       </div>
