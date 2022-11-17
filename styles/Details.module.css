@@ -59,6 +59,7 @@
 #missionsIcon {
   width: 115px;
   height: 35px;
+  margin-left: -15px;
 }
 
 #backgroundBoxDiv {

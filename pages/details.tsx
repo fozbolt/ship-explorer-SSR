@@ -8,7 +8,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { Oval } from "react-loader-spinner";
 
-export default function DetailsPage({ ship }: any) {
+type Ship = {
+  [key: string]: any;
+  year_built: number; //questionable type
+  weight_kg: number;
+  class: number;
+  home_port: string;
+  missions: [];
+  type: string;
+};
+
+type Mission = {
+  name: string;
+  flight: string;
+};
+
+export default function DetailsPage({ ship }: Ship) {
   /* ship - from apollo useQuery - Client side rendering*/
   //    const router = useRouter();
   //    const {
@@ -27,6 +42,7 @@ export default function DetailsPage({ ship }: any) {
   //   }
 
   let missions = ship?.missions;
+  console.log(ship);
 
   function getBasicInfo() {
     function cleanKey(str: string) {
@@ -155,7 +171,8 @@ export default function DetailsPage({ ship }: any) {
             width="24"
           />
           <div id={styles.missionsContainer}>
-            {missions?.map((mission: any) => (
+            {console.log(missions)}
+            {missions?.map((mission: Mission) => (
               <div id={styles.missionDiv} key={mission.name}>
                 <div id={styles.missionName}>{mission.name}</div>
                 <div id={styles.missioFlight}>Flight:{mission.flight}</div>

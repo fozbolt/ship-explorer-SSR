@@ -7,9 +7,17 @@ import Image from "next/image";
 import { apolloClient } from "../apolloClient";
 import { Oval } from "react-loader-spinner";
 
-export default function Home({ ships, loading }: any) {
+type Ships = {
+  [key: string]: any; //dummy key/value
+};
+
+type Ship = {
+  [key: string]: any;
+};
+
+export default function Home({ ships }: Ships) {
   /* ships - from Server side rendering */
-  //   console.log(ships);
+  console.log(ships);
 
   /* ships - from apollo useQuery - Client side rendering*/
   //   const { data, loading, error } = useQuery(GET_SHIPS);
@@ -29,7 +37,7 @@ export default function Home({ ships, loading }: any) {
 
       <main id={styles.homeMain}>
         {/* loading variables usable ONLY with CSR (useQuery) */}
-        {loading && (
+        {/* {loading && (
           <div id={styles.loaderDiv}>
             <h1 id={styles.mainHeaderLoading}>Collections</h1>
             <Oval
@@ -46,11 +54,11 @@ export default function Home({ ships, loading }: any) {
             />
             <p>loading...</p>
           </div>
-        )}
+        )} */}
 
-        {!loading && <h1 id={styles.mainHeader}>Collections</h1>}
+        {<h1 id={styles.mainHeader}>Collections</h1>}
         <div className={styles.grid}>
-          {ships?.map((ship: any) => (
+          {ships?.map((ship: Ship) => (
             //I put link on whole card because arrow icon is small
             <Link
               href={{
