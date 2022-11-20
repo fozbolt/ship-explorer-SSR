@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2020",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -21,7 +21,8 @@
     "**/*.tsx",
     "pages/_document.js",
     "pages/_document.js",
-    "globals.d.ts"
+    "globals.d.ts",
+    "pages/aa.tsy"
   ],
   "exclude": ["node_modules"]
 }

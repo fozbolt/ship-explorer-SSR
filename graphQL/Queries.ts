@@ -28,3 +28,14 @@ export const GET_SHIP = gql`
     }
   }
 `;
+
+export const SEARCH_SHIPS = gql`
+  query Ships($find: ShipsFind) {
+    ships(find: $find) {
+      id
+      name
+      type
+      image
+    }
+  }
+`;

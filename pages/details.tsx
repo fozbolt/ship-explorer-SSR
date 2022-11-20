@@ -23,6 +23,34 @@ type Mission = {
   flight: string;
 };
 
+//SSR
+export async function getServerSideProps(context: any) {
+  const client = apolloClient();
+  const { query } = context;
+
+  const { data, loading, error } = await client.query({
+    query: GET_SHIP,
+    variables: {
+      id: query.id,
+    },
+  });
+
+  {
+    loading && <p>loading...</p>;
+  }
+
+  // check for errors
+  if (error) {
+    return <p>:( an error happened</p>;
+  }
+
+  return {
+    props: {
+      ship: data.ship,
+    },
+  };
+}
+
 export default function DetailsPage({ ship }: Ship) {
   /* ship - from apollo useQuery - Client side rendering*/
   //    const router = useRouter();
@@ -42,7 +70,6 @@ export default function DetailsPage({ ship }: Ship) {
   //   }
 
   let missions = ship?.missions;
-  console.log(ship);
 
   function getBasicInfo() {
     function cleanKey(str: string) {
@@ -171,7 +198,6 @@ export default function DetailsPage({ ship }: Ship) {
             width="24"
           />
           <div id={styles.missionsContainer}>
-            {console.log(missions)}
             {missions?.map((mission: Mission) => (
               <div id={styles.missionDiv} key={mission.name}>
                 <div id={styles.missionName}>{mission.name}</div>
@@ -198,32 +224,4 @@ export default function DetailsPage({ ship }: Ship) {
       </div>
     </div>
   );
-}
-
-//SSR
-export async function getServerSideProps(context: any) {
-  const client = apolloClient();
-  const { query } = context;
-
-  const { data, loading, error } = await client.query({
-    query: GET_SHIP,
-    variables: {
-      id: query.id,
-    },
-  });
-
-  {
-    loading && <p>loading...</p>;
-  }
-
-  // check for errors
-  if (error) {
-    return <p>:( an error happened</p>;
-  }
-
-  return {
-    props: {
-      ship: data.ship,
-    },
-  };
 }

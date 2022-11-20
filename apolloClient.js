@@ -21,5 +21,8 @@ export const apolloClient = () => {
   return new ApolloClient({
     link: httpLink.options[1],
     cache: new InMemoryCache({}),
+    fetchOptions: {
+      mode: "no-cors",
+    },
   });
 };
